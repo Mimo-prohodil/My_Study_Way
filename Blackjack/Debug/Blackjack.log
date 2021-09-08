@@ -1,0 +1,14 @@
+﻿  Deck.cpp
+  Game.cpp
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\House.h(5,15): error C3668: 'House::IsHitting': method with override specifier 'override' did not override any base class methods
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Game.h(11,8): error C2259: 'House': cannot instantiate abstract class
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\House.h(3): message : see declaration of 'House'
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Game.h(11,8): message : due to following members:
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Game.h(11,8): message : 'bool GenericPlayer::isHitting(void) const': is abstract
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\GenericPlayer.h(9): message : see declaration of 'GenericPlayer::isHitting'
+  GenericPlayer.cpp
+  Hand.cpp
+  House.cpp
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\House.h(5,15): error C3668: 'House::IsHitting': method with override specifier 'override' did not override any base class methods
+  Player.cpp
+  Generating Code...
