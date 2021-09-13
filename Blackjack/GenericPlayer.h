@@ -7,11 +7,7 @@ protected:
 	std::string m_Name;
 public:
 	virtual bool isHitting() const = 0;
-	bool IsBoosted() const {
-
-	}
-	void Bust() const {
-
-	}
+	bool IsBusted();
+	void Bust();
 };
 

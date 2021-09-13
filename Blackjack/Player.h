@@ -2,9 +2,7 @@
 #include "GenericPlayer.h"
 class Player : public GenericPlayer {
 public:
-	virtual bool IsHitting() const {
-
-	}
+	bool IsHitting() const override;
 	void Win() const{
 
 	}
