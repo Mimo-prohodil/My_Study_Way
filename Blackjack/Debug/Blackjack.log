@@ -1,14 +1,21 @@
 ﻿  Deck.cpp
   Game.cpp
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\House.h(5,15): error C3668: 'House::IsHitting': method with override specifier 'override' did not override any base class methods
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Game.h(11,8): error C2259: 'House': cannot instantiate abstract class
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\House.h(3): message : see declaration of 'House'
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Game.h(11,8): message : due to following members:
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Game.h(11,8): message : 'bool GenericPlayer::isHitting(void) const': is abstract
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\GenericPlayer.h(9): message : see declaration of 'GenericPlayer::isHitting'
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(5,7): error C3668: 'Player::IsHitting': method with override specifier 'override' did not override any base class methods
   GenericPlayer.cpp
-  Hand.cpp
   House.cpp
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\House.h(5,15): error C3668: 'House::IsHitting': method with override specifier 'override' did not override any base class methods
   Player.cpp
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(5,7): error C3668: 'Player::IsHitting': method with override specifier 'override' did not override any base class methods
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,35): error C2723: 'Player::IsHitting': 'override' specifier illegal on function definition
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,35): error C2511: 'bool Player::IsHitting(void)': overloaded member function not found in 'Player'
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(3): message : see declaration of 'Player'
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,35): error C2059: syntax error: 'const'
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,41): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,41): error C2143: syntax error: missing ';' before '{'
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,41): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(5,26): error C2084: function 'void Player::Win(void) const' already has a body
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(6): message : see previous definition of 'Win'
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(8,27): error C2084: function 'void Player::Lose(void) const' already has a body
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(9): message : see previous definition of 'Lose'
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(11,27): error C2084: function 'void Player::Push(void) const' already has a body
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(12): message : see previous definition of 'Push'
   Generating Code...
