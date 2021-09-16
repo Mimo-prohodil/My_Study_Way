@@ -1,6 +1,6 @@
 #pragma once
-#include "Card.h"
 #include <vector>
+#include "Card.h"
 
 class Hand{
 protected:
@@ -8,5 +8,5 @@ protected:
 public:
 	void Add(Card* ptr);
 	void Clear();
-	int GetValue();
+	int GetTotal() const;
 };

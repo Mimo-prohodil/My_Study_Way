@@ -11,7 +11,7 @@ void Hand::Clear(){
     m_Cards.clear();
 }
 
-int Hand::GetValue(){
+int Hand::GetTotal() const{
     if (m_Cards.empty()) {
         return 0;
     }

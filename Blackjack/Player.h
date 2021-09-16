@@ -2,16 +2,10 @@
 #include "GenericPlayer.h"
 class Player : public GenericPlayer {
 public:
-	bool IsHitting() const override;
-	void Win() const{
-
-	}
-	void Lose() const {
-
-	}
-	void Push() const {
-
-	}
-
+	Player(const std::string& name = "") ;
+	bool IsHitting() const;
+	void Win() const;
+	void Lose() const;
+	void Push() const;
 };
 

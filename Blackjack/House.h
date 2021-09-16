@@ -2,11 +2,8 @@
 #include "GenericPlayer.h"
 class House : public GenericPlayer {
 public:
-	virtual bool IsHitting() const {
-		
-	}
-	void FlipFirstCard() {
-
-	}
+	House(const std::string& name = "House") {};
+	virtual bool isHitting() const override;
+	void FlipFirstCard();
 };
 

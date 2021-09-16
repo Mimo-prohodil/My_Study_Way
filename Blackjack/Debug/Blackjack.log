@@ -1,21 +1,12 @@
-﻿  Deck.cpp
+﻿  Blackjack.cpp
+  Card.cpp
+  Deck.cpp
   Game.cpp
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(5,7): error C3668: 'Player::IsHitting': method with override specifier 'override' did not override any base class methods
   GenericPlayer.cpp
+  Hand.cpp
   House.cpp
   Player.cpp
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(5,7): error C3668: 'Player::IsHitting': method with override specifier 'override' did not override any base class methods
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,35): error C2723: 'Player::IsHitting': 'override' specifier illegal on function definition
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,35): error C2511: 'bool Player::IsHitting(void)': overloaded member function not found in 'Player'
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(3): message : see declaration of 'Player'
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,35): error C2059: syntax error: 'const'
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,41): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,41): error C2143: syntax error: missing ';' before '{'
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(2,41): error C2447: '{': missing function header (old-style formal list?)
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(5,26): error C2084: function 'void Player::Win(void) const' already has a body
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(6): message : see previous definition of 'Win'
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(8,27): error C2084: function 'void Player::Lose(void) const' already has a body
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(9): message : see previous definition of 'Lose'
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.cpp(11,27): error C2084: function 'void Player::Push(void) const' already has a body
-C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Player.h(12): message : see previous definition of 'Push'
   Generating Code...
+Hand.obj : error LNK2019: unresolved external symbol "public: int __thiscall Card::getValue(void)const " (?getValue@Card@@QBEHXZ) referenced in function "public: int __thiscall Hand::GetTotal(void)const " (?GetTotal@Hand@@QBEHXZ)
+House.obj : error LNK2019: unresolved external symbol "public: void __thiscall Card::flip(void)" (?flip@Card@@QAEXXZ) referenced in function "public: void __thiscall House::FlipFirstCard(void)" (?FlipFirstCard@House@@QAEXXZ)
+C:\Users\aka47\OneDrive\Рабочий стол\programming\ООП\Blackjack\Debug\Blackjack.exe : fatal error LNK1120: 2 unresolved externals
