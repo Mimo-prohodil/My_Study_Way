@@ -44,56 +44,155 @@ public:
 
 #pragma region Task_3
 
-class OffTheField {
-private:
-    int position;
-    int direction;
-public:
-    OffTheField(int position, int direction) : position(position), direction(direction) {}
-    int getPosition() {
-        return position;
-    }
-    int getDirection() {
-        return direction;
-    }
+//class OffTheField {
+//private:
+//    int position;
+//    int direction;
+//public:
+//    OffTheField(int position, int direction) : position(position), direction(direction) {}
+//    int getPosition() {
+//        return position;
+//    }
+//    int getDirection() {
+//        return direction;
+//    }
+//};
+//
+//class IllegalCommand {
+//private:
+//    int position;
+//    int direction;
+//public:
+//    IllegalCommand(int position, int direction) : position(position), direction(direction) {}
+//    int getPosition() {
+//        return position;
+//    }
+//    int getDirection() {
+//        return direction;
+//    }
+//};
+//
+//class Robot {
+//private:
+//    int field[10][10];
+//    int** position;
+//    char direction;
+//public:
+//    Robot() : direction('0') {
+//        field[10][10] = { 0 };
+//        position = new field;
+//    }
+//    void setDirection(char a) {
+//        direction = a;
+//    }
+//    void setPosition(int a, int b) {
+//        position[a][b] = 1;
+//    }
+//    void movement(char dir, int&& pos) {
+//        if (dir == 'w') {
+//            pos[][]
+//        }
+//    }
+//};
+enum Command
+{
+	MOVE_NORTH,
+	MOVE_WEST,
+	MOVE_SOUTH,
+	MOVE_EAST,
+	MOVE_UP,
+	MOVE_DOWN,
 };
 
-class IllegalCommand {
-private:
-    int position;
-    int direction;
+const char* commandToString(Command command)
+{
+	switch (command)
+	{
+	case MOVE_NORTH: return "MOVE_NORTH";
+	case MOVE_WEST: return "MOVE_WEST";
+	case MOVE_SOUTH: return "MOVE_SOUTH";
+	case MOVE_EAST: return "MOVE_EAST";
+	case MOVE_UP: return "MOVE_UP";
+	case MOVE_DOWN: return "MOVE_DOWN";
+	}
+	return "";
+}
+
+class OffTheField : public std::range_error
+{
 public:
-    IllegalCommand(int position, int direction) : position(position), direction(direction) {}
-    int getPosition() {
-        return position;
-    }
-    int getDirection() {
-        return direction;
-    }
+	int posX;
+	int posY;
+	Command command;
+
+	OffTheField(int posX, int posY, Command command, const char* message = "") : std::range_error(message), posX(posX), posY(posY), command(command) {}
 };
 
-class Robot {
-private:
-    int field[10][10];
-    int** position;
-    char direction;
+class IllegalCommand : public std::range_error
+{
 public:
-    Robot() : direction('0') {
-        field[10][10] = { 0 };
-        position = new field;
-    }
-    void setDirection(char a) {
-        direction = a;
-    }
-    void setPosition(int a, int b) {
-        position[a][b] = 1;
-    }
-    void movement(char dir, int&& pos) {
-        if (dir == 'w') {
-            pos[][]
-        }
-    }
+	Command command;
+
+	IllegalCommand(Command command, const char* message = "") : std::range_error(message), command(command) {}
 };
+
+class Robot
+{
+public:
+	int posX;
+	int posY;
+
+	Robot(int posX, int posY) : posX(posX), posY(posY) {}
+
+	void move(Command command)
+	{
+		switch (command)
+		{
+		case MOVE_NORTH:
+			if (posY == 0)
+				throw OffTheField(posX, posY, command, "OffTheField");
+			--posY;
+			break;
+
+		case MOVE_WEST:
+			if (posX == 0)
+				throw OffTheField(posX, posY, command, "OffTheField");
+			--posX;
+			break;
+
+		case MOVE_SOUTH:
+			if (posY == 9)
+				throw OffTheField(posX, posY, command, "OffTheField");
+			++posY;
+			break;
+
+		case MOVE_EAST:
+			if (posX == 9)
+				throw OffTheField(posX, posY, command, "OffTheField");
+			++posX;
+			break;
+
+		default:
+			throw IllegalCommand(command, "IllegalCommand");
+		}
+	}
+};
+
+void task3_robotMoveTest(Robot& robot, Command command)
+{
+	try
+	{
+		robot.move(command);
+	}
+	catch (OffTheField& offTheField)
+	{
+		printf("%s: pos(%d, %d) command %s\n", offTheField.what(), offTheField.posX, offTheField.posY, commandToString(offTheField.command));
+	}
+	catch (IllegalCommand& illegalCommand)
+	{
+		printf("%s: %s\n", illegalCommand.what(), commandToString(illegalCommand.command));
+	}
+}
 
 #pragma endregion 
 
@@ -140,10 +239,43 @@ int main()
         std::cout << "Эти методы должны запускать классы-исключения OffTheField, если робот должен уйти с сетки, и IllegalCommand, если подана неверная команда (направление не находится в нужном диапазоне)." << std::endl;
         std::cout << "Объект исключения должен содержать всю необходимую информацию — текущую позицию и направление движения. Написать функцию main, пользующуюся этим классом и перехватывающую все исключения от его методов," << std::endl;
         std::cout << "а также выводящую подробную информацию о всех возникающих ошибках." << std::endl;
-        Robot r;
+        
+		Robot robot(2, 2);
 
+		bool isMoving = true;
 
-    }
+		while (isMoving)
+		{
+			printf("Robot position (%d, %d)\n", robot.posX, robot.posY);
 
+			fflush(stdin);
+			char command;
+			std::cin >> command;
+
+			switch (command)
+			{
+			case 'n':
+				task3_robotMoveTest(robot, MOVE_NORTH);
+				break;
+			case 'w':
+				task3_robotMoveTest(robot, MOVE_WEST);
+				break;
+			case 's':
+				task3_robotMoveTest(robot, MOVE_SOUTH);
+				break;
+			case 'e':
+				task3_robotMoveTest(robot, MOVE_EAST);
+				break;
+			case 'u':
+				task3_robotMoveTest(robot, MOVE_UP);
+				break;
+			case 'd':
+				task3_robotMoveTest(robot, MOVE_DOWN);
+				break;
+			default:
+				isMoving = false;
+			}
+		}
+	}
     return 0;
 }
