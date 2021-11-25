@@ -20,9 +20,10 @@ double Matrix::getDeterminator() {
 			for (size_t j = i + 1; j < vec.size(); ++j) {
 				if (vec[j][i] != 0) {
 					for (size_t k = i; k < vec.size(); ++k) {
-						std::swap(vec[j][k], vec[i][k]);						
+						isPlus = !isPlus;
+						std::swap(vec[j][k], vec[i][k]);
 					}
-					isPlus = !isPlus;
+					break;
 				}
 			}
 			if (vec[i][i] == 0) {
@@ -37,9 +38,9 @@ double Matrix::getDeterminator() {
 				}
 			}
 		}
-		if (vec[vec.size()-1][vec.size() - 1] == 0) {
-			return 0;
-		}
+	}
+	if (vec[vec.size()-1][vec.size() - 1] == 0) {
+		return 0;
 	}
 	double determinator{ isPlus ? 1.0 : -1.0 };
 	for (size_t i = 0; i < vec.size(); ++i) {

@@ -41,7 +41,7 @@ int main() {
 		std::vector<int> matrix;
 		srand(time(0));
 		for (size_t i = 0; i < matrixSize * matrixSize; ++i) {
-			matrix.emplace_back(std::rand() % 20 - 10);
+			matrix.emplace_back(std::rand() % 10 - 5);
 		}
 
 		Matrix m(matrix, matrixSize);
