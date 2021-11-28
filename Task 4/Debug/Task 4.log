@@ -1,0 +1,17 @@
+﻿  main.cpp
+E:\programming\C++ Difficult moments\Task 4\main.cpp(42,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+E:\visual studio\VC\Tools\MSVC\14.29.30133\include\xutility(4198,18): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+E:\visual studio\VC\Tools\MSVC\14.29.30133\include\xutility(4210): message : выполняется компиляция ссылки на экземпляр шаблон функции "_OutIt *std::_Copy_unchecked<double*,int*>(_InIt,_InIt,_OutIt)"
+          with
+          [
+              _OutIt=int *,
+              _InIt=double *
+          ]
+E:\programming\C++ Difficult moments\Task 4\main.cpp(49): message : выполняется компиляция ссылки на экземпляр шаблон функции "_OutIt std::copy<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>>(_InIt,_InIt,_OutIt)"
+          with
+          [
+              _OutIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>,
+              _Ty=double,
+              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>
+          ]
+  Task 4.vcxproj -> E:\programming\C++ Difficult moments\Task 4\Debug\Task 4.exe
